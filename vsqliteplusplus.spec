@@ -3,7 +3,7 @@
 %define develname %mklibname %{name} -d
 
 Name:       vsqlite++
-Version:    0.3.12
+Version:    0.3.13
 Release:    1
 Summary:    Well designed C++ sqlite 3.x wrapper library
 
@@ -46,7 +46,7 @@ This package contains development files for %{name}.
 ./autogen.sh
 
 %build
-%configure
+%configure2_5x --disable-static
 sed -i -e 's! -shared ! -Wl,--as-needed\0!g' libtool
 %make
 doxygen Doxyfile
@@ -73,8 +73,6 @@ make DESTDIR=%{buildroot} install
 %doc ChangeLog README COPYING
 %{_libdir}/libvsqlitepp.so
 %{_includedir}/sqlite
-%exclude %{_libdir}/libvsqlitepp.la
-%exclude %{_libdir}/libvsqlitepp.a
 
 %files -n %{libname}
 %doc ChangeLog README COPYING
