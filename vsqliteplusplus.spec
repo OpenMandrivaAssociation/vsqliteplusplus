@@ -12,6 +12,11 @@ License:    BSD
 URL:        https://github.com/vinzenz/vsqlite--
 Source0:    http://evilissimo.fedorapeople.org/releases/vsqlite--/%{version}/vsqlite---%{version}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  boost-devel
 BuildRequires:  sqlite3-devel
 BuildRequires:  libtool
